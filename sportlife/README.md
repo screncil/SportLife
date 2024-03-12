@@ -2,6 +2,7 @@
 
 This is a full stack website written using Vue and Flask
 
+VUE
 ## Project Setup
 
 ```sh
@@ -19,3 +20,9 @@ npm run dev
 ```sh
 npm run build
 ```
+
+
+
+FLASK
+
+python main.py
