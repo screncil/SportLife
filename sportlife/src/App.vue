@@ -42,6 +42,24 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+.exitbtn {
+  border: none;
+  background-color: black;
+  width: 130px;
+  height: 35px;
+  margin-left: 20px;
+  border-radius: 5px;
+  color: white;
+  font-size: 13px;
+}
+
+.exitbtn:hover {
+  border: 1px black solid;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+}
+
 .textdecoration-none {
   text-decoration: none;
   color: black;
