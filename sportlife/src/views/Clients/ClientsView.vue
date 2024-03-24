@@ -2,8 +2,10 @@
 import VueCookie from "vue-cookie";
 import router from "@/router/index.js";
 import axios from "axios";
+import FiltersView from "@/views/FiltersView.vue";
 
 export default {
+  components: { FiltersView },
   created() {
     this.getClients()
   },
@@ -84,21 +86,7 @@ export default {
       </div>
       </div>
     </div>
-    <div class="filters">
-      <p>Фильтры</p>
-      <div class="filterss">
-        <div class="filter-btns">
-          <input @click="filter_selected = true" v-model="filter_value" name="filter" type="radio" id="for-subscription" value="for-sub">
-          <label for="for-subscription">По абонименту</label>
-        </div>
-        <div class="filter-btn">
-          <input @click="filter_selected = true" v-model="filter_value" name="filter" type="radio" id="subscription-end" value="sub-end">
-          <label for="for-subscription">По окончанию абонимента</label>
-        </div>
-        <button v-if="filter_selected === true" @click="setFilters()" class="confirm-filters">Применить</button>
-        <button v-else class="confirm-filters-disabled">Применить</button>
-      </div>
-    </div>
+    <FiltersView />
   </div>
   <p v-else>Нету доступа</p>
 
@@ -194,60 +182,6 @@ export default {
   height: auto;
   width: 890px;
   padding: 10px;
-}
-
-.confirm-filters-disabled {
-  border: none;
-  width: 270px;
-  height: 40px;
-  background-color: rgba(220,220,220,.5);
-  margin-top: 20px;
-  border-radius: 5px;
-  color: gray;
-  font-size: 15px;
-}
-
-.confirm-filters {
-  width: 270px;
-  height: 40px;
-  border: 1px black solid;
-  border-radius: 5px;
-  background-color: black;
-  color: white;
-  font-size: 15px;
-  margin-top: 20px;
-}
-
-.confirm-filters:hover {
-  background-color: transparent;
-  color: black;
-  cursor: pointer;
-}
-
-.filterss {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 20px;
-}
-
-.filters {
-  background-color: transparent;
-  border: 1px black solid;
-  border-radius: 10px;
-  width: 20%;
-  margin: 20px;
-  height: auto;
-  position: absolute;
-  right: 0;
-  font-family: "Open Sans", sans-serif;
-}
-
-.filters p {
-  font-size: 20px;
-  margin: auto;
-  margin-left: 35%;
-  margin-top: 30px;
-  font-weight: bold;
 }
 
 .searchbtn, .disabled-searchbtn {
